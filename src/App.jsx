@@ -37,7 +37,7 @@ class App extends Component {
       .then(data => data.json())
       .then(data => {
         console.log(data);
-        this.setState({modalData: data})
+        this.setState({modalData: {type: 'series', data: data}})
       })
       .catch(error => console.log(error))
     } else {
@@ -46,7 +46,7 @@ class App extends Component {
       .then(data => data.json())
       .then(data => {
         console.log(data);
-        this.setState({modalData: data})
+        this.setState({modalData: {type: 'movie', data: data}})
       })
       .catch(error => console.log(error))
     }

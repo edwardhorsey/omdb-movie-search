@@ -27,15 +27,6 @@ class Main extends Component {
         <p>Main</p>
         {this.state.modalShowing? <Modal modalData={this.props.modalData} closeModal={this.closeModal} /> : ''}
         <CardList data={this.props.data} openModal={this.openModal} />
-        {/* <img src={image_url} alt="batch of beer"/>
-        <div>
-          <h3>{name}</h3>
-          <p className={styles.description}>{description}</p>
-          <p>First Brewed: {first_brewed}</p>
-          <p>ABV: {abv}</p>
-          <p>pH: {ph}</p>
-          <p>IBU: {ibu}</p>
-        </div> */}
       </article>
      );
   }

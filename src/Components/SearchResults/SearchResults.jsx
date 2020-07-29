@@ -12,9 +12,9 @@ class SearchResults extends Component {
         <p>SearchResults</p>
         <div>
           <h3 onClick={() => {this.props.openModal(imdbID, Type)}} >{Title}</h3>
-          <p>{Type}</p>
-          <p>{Year}</p>
-          <p>{imdbID}</p>
+          <p>Type: {Type}</p>
+          <p>Year: {Year}</p>
+          <p>imdb ID: {imdbID}</p>
         </div>
         <img onClick={() => {this.props.openModal(imdbID, Type)}}  src={Poster} alt="Movie poster"/>
       </article>
