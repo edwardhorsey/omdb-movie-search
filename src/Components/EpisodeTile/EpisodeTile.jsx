@@ -9,11 +9,11 @@ class EpisodeTile extends Component {
     return ( 
       <section className={styles.episodeTile}>
         <div>
-          <p>Title : {Title}</p>
+          <h4>Title : {Title}</h4>
           <p>Released: {Released}</p>
           <p>Episode: {Episode}</p>
-          <p>imdbRating: {imdbRating}</p>
-          <p>imdbID: {imdbID}</p>
+          <p>IMDB Rating: {imdbRating}</p>
+          <p>IMDB ID: {imdbID}</p>
         </div>
       </section>
     );

@@ -1,16 +1,60 @@
-.modal {
+.outerModal {
   position: absolute;
-  display: flex;
-  width: 85%;
-  flex-direction: column;
-  justify-content: space-evenly;
-  padding: 20px;
-  background-color: lavender;
-  backdrop-filter: blur(10px);
-  overflow: auto;
-  left: 2.5%;
-  top: 2.5%;
-  z-index: 4;
-  animation: fade 0.75s ease;
+  backdrop-filter: blur(10px);  
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 3;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  .modal {
+    position: absolute;
+    display: flex;
+    width: 95%;
+    max-width: 500px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 20px;
+    background-color: rgb(227, 227, 235);
+    overflow: auto;
+    left: 2%;
+    top: 2%;
+    z-index: 4;
+    border: 2px solid rgb(193, 193, 194);
+    margin: 0px auto;
 
+    @media only screen and (min-width: 600px) {
+      left: 15%;
+    }
+
+    @media only screen and (min-width: 800px) {
+      left: 30%;
+    }
+
+    img {
+      border: 1px solid rgb(193, 193, 194);
+      margin-bottom: 10px;
+      max-width:350px;
+      width: 100%;
+      height: auto;
+    }
+
+    div {
+      
+      &.titleButton {
+        box-shadow: none;
+        display: flex;
+        justify-content: space-between;
+        button {
+          height: 35px;
+          min-width: 65px;
+          &:hover {
+            background-color: rgb(209, 209, 212);
+            outline: none;
+            border: 1px solid black;
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
 }

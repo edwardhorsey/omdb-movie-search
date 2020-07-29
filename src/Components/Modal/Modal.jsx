@@ -11,7 +11,10 @@ class Modal extends Component {
       <>
         <img src={Poster} alt="Movie poster"/>
         <div>
-          <h3>Title: {Title}</h3>
+          <div className={styles.titleButton}>
+            <h3>{Title}</h3>
+            <button onClick={this.props.closeModal}>Back</button>
+          </div>
           <p>Runtime: {Runtime}</p>
           <p>Released: {Released}</p>
           <p>Rated: {Rated}</p>
@@ -34,13 +37,16 @@ class Modal extends Component {
   }
 
   renderSeries = () => {
-    const { Title, Season, Episodes, totalSeasons } = this.props.modalData.data;
-    const { Poster, imdbID } = this.props.searchData.result.find(result => result.Title === Title);
+    const { Title, Season, Episodes, totalSeasons, imdbID } = this.props.modalData.data;
+    const { Poster } = this.props.searchData.result.find(result => result.imdbID === imdbID);
     return (
       <>
         <img src={Poster} alt="Movie poster"/>
         <div>
-          <h3>Title: {Title}</h3>
+          <div className={styles.titleButton}>
+            <h3>{Title}</h3>
+            <button onClick={this.props.closeModal}>Back</button>
+          </div>
           <p>Total Seasons: {totalSeasons}</p>
           <select name="season" id="season" onChange={(event)=>{this.props.openModal(imdbID, 'series', event.target.value)}}>
             {this.renderSeasonsList(totalSeasons)}
@@ -65,9 +71,10 @@ class Modal extends Component {
 
   render() {
     return ( 
-      <article className={styles.modal}>
-        <button onClick={this.props.closeModal}>Back</button>
-        {this.renderModal()}
+      <article className={styles.outerModal}>
+        <article className={styles.modal}>
+          {this.renderModal()}
+        </article>
       </article>
      );
   }

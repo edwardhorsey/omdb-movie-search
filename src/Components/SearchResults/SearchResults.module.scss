@@ -2,8 +2,24 @@
 .searchResults {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background-color: rgb(209, 209, 219);
   border-radius: 5px;
-  margin: 10px;
+  margin: 5px;
+  padding: 5px;
+  width: 100%;
+  h3 {
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.185);
+      cursor: pointer;
+  }
+}
+  img {
+    max-width: 200px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.185);
+    border: 1px solid rgb(193, 193, 194);
+    border-radius: 5px;
+    cursor: pointer;
+  }
 }

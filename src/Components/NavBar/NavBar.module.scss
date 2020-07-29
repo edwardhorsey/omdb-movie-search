@@ -1,3 +1,12 @@
 .navBar {
   display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 10px 20px 10px 20px;
+  background-color: rgb(129, 142, 161);
+  color: rgb(0, 0, 0);
+
+  h3 {
+    margin: auto 0;
+  }
 }

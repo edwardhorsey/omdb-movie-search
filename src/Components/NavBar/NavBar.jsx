@@ -8,7 +8,7 @@ class NavBar extends Component {
   render() { 
     return ( 
       <nav className={styles.navBar}>
-        <p>Nav bar</p>
+        <h3>Movie & TV Show Search</h3>
         <Search search={this.props.search} />
       </nav>
      );

@@ -37,7 +37,8 @@ class App extends Component {
       .then(data => data.json())
       .then(data => {
         console.log(data);
-        this.setState({modalData: {type: 'series', data: data}})
+
+        this.setState({modalData: {type: 'series', data: { ...data, imdbID: id, }}})
       })
       .catch(error => console.log(error))
     } else {
@@ -53,7 +54,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.makeRequest('South ')
+    this.makeRequest('Ali ')
   }
 
   render() {
@@ -62,8 +63,10 @@ class App extends Component {
 
     return (
       <>
-        <NavBar search={this.search} />
-        <Main data={this.state.data} modalRequest={this.modalRequest} modalData={this.state.modalData} />
+        <div className={styles.App}>
+          <NavBar search={this.search} />
+          <Main data={this.state.data} modalRequest={this.modalRequest} modalData={this.state.modalData} />
+        </div>
       </>
     );
   }
