@@ -18,3 +18,12 @@ http://www.omdbapi.com/
 Follow the documentation at the OMDB API site to get yourself an API key and make requests to the database.
 Submission
 Your code should be pushed up to a github repository and the url sent over to us. Your final commit should be no later than midnight 29/07.
+
+///////////////////////////
+
+Further changes I would make
+
+Search years by adding a forward slash before the year: /2020 
+Rename capitalised variables to camelcase
+
+//////////////////////////
