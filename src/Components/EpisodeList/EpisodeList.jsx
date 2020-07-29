@@ -8,9 +8,7 @@ class EpisodeList extends Component {
   render() { 
     return ( 
       <section className={styles.episodeList}>
-        {this.props.data.map(episode => {
-          return <EpisodeTile data={episode} />
-        })}
+        {this.props.data.map(episode => <EpisodeTile data={episode} />)}
       </section>
      );
   }

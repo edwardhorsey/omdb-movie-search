@@ -30,10 +30,10 @@ class App extends Component {
     console.log(process.env.REACT_APP_NOT_SECRET_CODE)
   }
 
-  modalRequest = (id, tvShow) => {
+  modalRequest = (id, tvShow, season=1) => {
     if (tvShow) {
       console.log(`searching for tv show ${id}`)
-      fetch(`http://www.omdbapi.com/?i=${id}&apikey=ed586e21&s&Season=1`)
+      fetch(`http://www.omdbapi.com/?i=${id}&apikey=ed586e21&s&Season=${season}`)
       .then(data => data.json())
       .then(data => {
         console.log(data);

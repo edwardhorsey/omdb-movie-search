@@ -25,18 +25,30 @@ class Modal extends Component {
     );
   }
 
+  renderSeasonsList = (num) => {
+    let output = [];
+    for (let i=0;i<num;i++) {
+    output.push(<option value={i+1}>{i+1}</option>)
+    }
+    return output;
+  }
+
   renderSeries = () => {
     console.log(this.props.modalData.data);
     const { Title, Season, Episodes, totalSeasons } = this.props.modalData.data;
+    const { Poster, imdbID } = this.props.searchData.result.find(result => result.Title === Title);
     return (
       <>
-        {/* <img src={Poster} alt="Movie poster"/> */}
+        <img src={Poster} alt="Movie poster"/>
         <div>
           <h3>Title: {Title}</h3>
+          <p>Total Seasons: {totalSeasons}</p>
+          <select name="season" id="season" onChange={(event)=>{this.props.openModal(imdbID, 'series', event.target.value)}}>
+            {this.renderSeasonsList(totalSeasons)}
+          </select>
           <p>Season: {Season}</p>
           <p>Episodes:</p>
           <EpisodeList data={Episodes} />
-          <p>Total Seasons: {totalSeasons}</p>
         </div>
       </>
     );
