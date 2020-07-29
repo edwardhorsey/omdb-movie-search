@@ -8,7 +8,6 @@ class CardList extends Component {
   renderCards = () => {
     let output;
     if (this.props.data.type === "search") {
-      console.log(this.props.data)
       output = this.renderSearch(this.props.data.result)
       return output;
     }
@@ -27,7 +26,6 @@ class CardList extends Component {
     return ( 
       <section className={styles.cards}>
         {this.props.data ? this.renderCards() : ''}
-        <p>CardList</p>
       </section>
      );
   }
