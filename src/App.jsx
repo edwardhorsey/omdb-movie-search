@@ -8,9 +8,10 @@ class App extends Component {
 
   state = { data: [], modalData: [] }
 
-  makeRequest = (searchTerm) => {
+  makeRequest = (searchTerm, year) => {
     searchTerm = searchTerm ? '&s=' + searchTerm : '';
-    fetch('http://www.omdbapi.com/?i=tt3896198&apikey=ed586e21&s' + searchTerm)
+    year = year ? '&y=' + year : '';
+    fetch('http://www.omdbapi.com/?i=tt3896198&apikey=ed586e21&s' + searchTerm + year)
       .then(data => data.json())
       .then(data => {
         console.log(data);
@@ -23,11 +24,19 @@ class App extends Component {
       .catch(error => console.log(error))
   }
 
+  splitBySearchAndYear = (string) => {
+    if (/\d{4}/.test(string)){
+      const year = string.match(/\d{4}/g)[0];
+      let output = string.split(' ');
+      output.splice(output.indexOf(year), 1);
+      return [output, year]
+    } else {return [string]}
+  }
+
   search = (event) => {
     event.preventDefault();
-    console.log(`search ${event.target.value}`)
-    this.makeRequest(event.target.value)
-    console.log(process.env.REACT_APP_NOT_SECRET_CODE)
+    let inputValues = this.splitBySearchAndYear(event.target.value);
+    this.makeRequest(...inputValues)
   }
 
   modalRequest = (id, tvShow, season=1) => {

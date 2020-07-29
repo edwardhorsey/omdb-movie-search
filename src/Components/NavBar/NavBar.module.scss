@@ -1,12 +1,18 @@
 .navBar {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-content: center;
   padding: 10px 20px 10px 20px;
   background-color: rgb(129, 142, 161);
   color: rgb(0, 0, 0);
+  
+  .top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
-  h3 {
-    margin: auto 0;
+    h3 {
+      margin: auto 0;
+    }
   }
 }
