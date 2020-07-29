@@ -7,7 +7,7 @@ class EpisodeTile extends Component {
   render() { 
     const { Title, Released, Episode, imdbRating, imdbID } = this.props.data;
     return ( 
-      <section className={styles.EpisodeTile}>
+      <section className={styles.episodeTile}>
         <div>
           <p>Title : {Title}</p>
           <p>Released: {Released}</p>
