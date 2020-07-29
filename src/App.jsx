@@ -15,11 +15,7 @@ class App extends Component {
       .then(data => data.json())
       .then(data => {
         console.log(data);
-        if (searchTerm) {
-          this.setState({data: {type: 'search', result: data.Search}})
-        } else {
-          this.setState({data: {type: 'movie', result: data}})
-        }
+          this.setState({data: {type: 'search', result: data.Search }})
       })
       .catch(error => console.log(error))
   }

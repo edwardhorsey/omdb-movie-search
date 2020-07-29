@@ -11,11 +11,12 @@
     display: flex;
     width: 95%;
     max-width: 500px;
+    max-height: 100vh;
     flex-direction: column;
     justify-content: space-evenly;
     padding: 20px;
     background-color: rgb(227, 227, 235);
-    overflow: auto;
+    overflow-y: auto;
     left: 2%;
     top: 2%;
     z-index: 4;
@@ -33,9 +34,14 @@
     img {
       border: 1px solid rgb(193, 193, 194);
       margin-bottom: 10px;
-      max-width:350px;
+      max-width:250px;
       width: 100%;
       height: auto;
+    }
+
+    select {
+      padding: 5px;
+      width: 60px;
     }
 
     div {
