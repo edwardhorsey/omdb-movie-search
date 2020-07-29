@@ -9,7 +9,6 @@ class SearchResults extends Component {
     
     return ( 
       <article className={styles.searchResults}>
-        <p>SearchResults</p>
         <div>
           <h3 onClick={() => {this.props.openModal(imdbID, Type)}} >{Title}</h3>
           <p>Type: {Type}</p>

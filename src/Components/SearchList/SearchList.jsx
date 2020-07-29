@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import styles from './CardList.module.scss';
+import styles from './SearchList.module.scss';
 import SearchResults from '../SearchResults';
 
-class CardList extends Component {
+class SearchList extends Component {
   state = {  }
 
   renderCards = () => {
@@ -16,8 +16,8 @@ class CardList extends Component {
 
   renderSearch = (data) => {
     if (data) {
-      return data.map(result => {
-        return <SearchResults data={result} openModal={this.props.openModal} />
+      return data.map((result, index) => {
+        return <SearchResults key={index} data={result} openModal={this.props.openModal} />
       })
     }
   }
@@ -31,4 +31,4 @@ class CardList extends Component {
   }
 }
  
-export default CardList;
+export default SearchList;
